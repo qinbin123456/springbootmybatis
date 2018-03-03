@@ -1,32 +1,19 @@
-server:
-  port: 8080
 spring:
-    datasource:
-        name: test
-        url: jdbc:mysql://127.0.0.1:3306/testdb
-        username: root
-        password: qb123456
-        type: com.alibaba.druid.pool.DruidDataSource
-        driver-class-name: com.mysql.jdbc.Driver
-        filters: stat
-        maxActive: 20
-        initialSize: 1
-        maxWait: 60000
-        minIdle: 1
-        timeBetweenEvictionRunsMillis: 60000
-        minEvictableIdleTimeMillis: 300000
-        validationQuery: select 'x'
-        testWhileIdle: true
-        testOnBorrow: false
-        testOnReturn: false
-        poolPreparedStatements: true
-        maxOpenPreparedStatements: 20
+    #区分开发还是正式版
+    profiles:
+      active: dev
+    aop:
+      auto: true
+#mybatis 配置文件和别名
 mybatis:
   mapper-locations: classpath:mapping/*.xml
   type-aliases-package: com.example.springbootmybatis.model
-
+#分页插件
 pagehelper:
     helperDialect: mysql
     reasonable: true
     supportMethodsArguments: true
     params: count=countSql
+#日志记录
+logging:
+    config: classpath:logback-spring.xml
