@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 public class DemoController {
 
@@ -18,8 +20,9 @@ public class DemoController {
      * @return
      */
     @RequestMapping("getDemo")
-    public Object getDemo(){
-
+    public Object getDemo(HttpServletRequest request){
+        //A9A373A47B6180B74490399F9BA29128
+        System.out.println("SessionID:"+request.getSession().getId());
         return demoService.getAll();
     }
 
