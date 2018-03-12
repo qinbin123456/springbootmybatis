@@ -25,7 +25,7 @@ public class HttpAspectPxy {
         // 接收到请求，记录请求内容
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
-        System.out.println("请求时就执行的代码： ");
+        System.out.println("请求时就执行的代码：");
         // 记录下请求内容
         System.out.println("URL : " + request.getRequestURL().toString());
         System.out.println("HTTP_METHOD : " + request.getMethod());
