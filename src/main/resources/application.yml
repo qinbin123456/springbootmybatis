@@ -17,3 +17,6 @@ pagehelper:
 #日志记录
 logging:
     config: classpath:logback-spring.xml
+server:
+  context-path: /test
+
