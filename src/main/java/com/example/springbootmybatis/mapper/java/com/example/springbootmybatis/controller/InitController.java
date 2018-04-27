@@ -1,4 +1,4 @@
-package com.example.springbootmybatis.controller;
+package com.example.springbootmybatis.mapper.java.com.example.springbootmybatis.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

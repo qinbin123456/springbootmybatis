@@ -8,6 +8,9 @@ spring:
 mybatis:
   mapper-locations: classpath:mapping/*.xml
   type-aliases-package: com.example.springbootmybatis.model
+#安全控制 取消默認
+security:
+
 #分页插件
 pagehelper:
     helperDialect: mysql
