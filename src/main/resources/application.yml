@@ -18,5 +18,5 @@ pagehelper:
 logging:
     config: classpath:logback-spring.xml
 server:
-  context-path: /test
+  context-path: /yun_V2
 
