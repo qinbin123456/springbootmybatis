@@ -15,8 +15,8 @@ pagehelper:
     supportMethodsArguments: true
     params: count=countSql
 #日志记录
-logging:
-    config: classpath:logback-spring.xml
+#logging:
+#    config: classpath:logback-spring.xml
 server:
   context-path: /yun_V2
 
