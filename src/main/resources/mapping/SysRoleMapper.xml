@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springbootmybatis.mapper.SysRoleMapper">
+  <resultMap id="BaseResultMap" type="com.example.springbootmybatis.model.SysRole">
+    <id column="roleID" jdbcType="VARCHAR" property="roleid" />
+    <result column="roleName" jdbcType="VARCHAR" property="rolename" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="is_del" jdbcType="INTEGER" property="isDel" />
+    <result column="del_date" jdbcType="TIMESTAMP" property="delDate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    roleID, roleName, create_date, is_del, del_date
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_role
+    where roleID = #{roleid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from sys_role
+    where roleID = #{roleid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.example.springbootmybatis.model.SysRole">
+    insert into sys_role (roleID, roleName, create_date, 
+      is_del, del_date)
+    values (#{roleid,jdbcType=VARCHAR}, #{rolename,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{isDel,jdbcType=INTEGER}, #{delDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.springbootmybatis.model.SysRole">
+    insert into sys_role
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="roleid != null">
+        roleID,
+      </if>
+      <if test="rolename != null">
+        roleName,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+      <if test="isDel != null">
+        is_del,
+      </if>
+      <if test="delDate != null">
+        del_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="roleid != null">
+        #{roleid,jdbcType=VARCHAR},
+      </if>
+      <if test="rolename != null">
+        #{rolename,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDel != null">
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="delDate != null">
+        #{delDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.springbootmybatis.model.SysRole">
+    update sys_role
+    <set>
+      <if test="rolename != null">
+        roleName = #{rolename,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDel != null">
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="delDate != null">
+        del_date = #{delDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where roleID = #{roleid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.springbootmybatis.model.SysRole">
+    update sys_role
+    set roleName = #{rolename,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      is_del = #{isDel,jdbcType=INTEGER},
+      del_date = #{delDate,jdbcType=TIMESTAMP}
+    where roleID = #{roleid,jdbcType=VARCHAR}
+  </update>
+</mapper>

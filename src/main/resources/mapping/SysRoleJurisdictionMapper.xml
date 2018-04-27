@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springbootmybatis.mapper.SysRoleJurisdictionMapper">
+  <resultMap id="BaseResultMap" type="com.example.springbootmybatis.model.SysRoleJurisdiction">
+    <id column="rjID" jdbcType="VARCHAR" property="rjid" />
+    <result column="roleID" jdbcType="VARCHAR" property="roleid" />
+    <result column="jurisID" jdbcType="VARCHAR" property="jurisid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    rjID, roleID, jurisID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_role_jurisdiction
+    where rjID = #{rjid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from sys_role_jurisdiction
+    where rjID = #{rjid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.example.springbootmybatis.model.SysRoleJurisdiction">
+    insert into sys_role_jurisdiction (rjID, roleID, jurisID
+      )
+    values (#{rjid,jdbcType=VARCHAR}, #{roleid,jdbcType=VARCHAR}, #{jurisid,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.springbootmybatis.model.SysRoleJurisdiction">
+    insert into sys_role_jurisdiction
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="rjid != null">
+        rjID,
+      </if>
+      <if test="roleid != null">
+        roleID,
+      </if>
+      <if test="jurisid != null">
+        jurisID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="rjid != null">
+        #{rjid,jdbcType=VARCHAR},
+      </if>
+      <if test="roleid != null">
+        #{roleid,jdbcType=VARCHAR},
+      </if>
+      <if test="jurisid != null">
+        #{jurisid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.springbootmybatis.model.SysRoleJurisdiction">
+    update sys_role_jurisdiction
+    <set>
+      <if test="roleid != null">
+        roleID = #{roleid,jdbcType=VARCHAR},
+      </if>
+      <if test="jurisid != null">
+        jurisID = #{jurisid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where rjID = #{rjid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.springbootmybatis.model.SysRoleJurisdiction">
+    update sys_role_jurisdiction
+    set roleID = #{roleid,jdbcType=VARCHAR},
+      jurisID = #{jurisid,jdbcType=VARCHAR}
+    where rjID = #{rjid,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.example.springbootmybatis.model.SysRoleJurisdiction">
+    <id column="rjID" jdbcType="VARCHAR" property="rjid" />
+    <result column="roleID" jdbcType="VARCHAR" property="roleid" />
+    <result column="jurisID" jdbcType="VARCHAR" property="jurisid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    rjID, roleID, jurisID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_role_jurisdiction
+    where rjID = #{rjid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from sys_role_jurisdiction
+    where rjID = #{rjid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.example.springbootmybatis.model.SysRoleJurisdiction">
+    insert into sys_role_jurisdiction (rjID, roleID, jurisID
+      )
+    values (#{rjid,jdbcType=VARCHAR}, #{roleid,jdbcType=VARCHAR}, #{jurisid,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.springbootmybatis.model.SysRoleJurisdiction">
+    insert into sys_role_jurisdiction
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="rjid != null">
+        rjID,
+      </if>
+      <if test="roleid != null">
+        roleID,
+      </if>
+      <if test="jurisid != null">
+        jurisID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="rjid != null">
+        #{rjid,jdbcType=VARCHAR},
+      </if>
+      <if test="roleid != null">
+        #{roleid,jdbcType=VARCHAR},
+      </if>
+      <if test="jurisid != null">
+        #{jurisid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.springbootmybatis.model.SysRoleJurisdiction">
+    update sys_role_jurisdiction
+    <set>
+      <if test="roleid != null">
+        roleID = #{roleid,jdbcType=VARCHAR},
+      </if>
+      <if test="jurisid != null">
+        jurisID = #{jurisid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where rjID = #{rjid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.springbootmybatis.model.SysRoleJurisdiction">
+    update sys_role_jurisdiction
+    set roleID = #{roleid,jdbcType=VARCHAR},
+      jurisID = #{jurisid,jdbcType=VARCHAR}
+    where rjID = #{rjid,jdbcType=VARCHAR}
+  </update>
+</mapper>
